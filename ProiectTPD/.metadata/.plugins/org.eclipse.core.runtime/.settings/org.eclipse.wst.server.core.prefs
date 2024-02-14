@@ -1,0 +1,3 @@
+eclipse.preferences.version=1
+module-start-timeout=300000
+runtimes=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?>\r\n<runtimes>\r\n  <runtime id\="Payara" location\="D\:/Eclipse/payara5/glassfish" name\="Payara" runtime-type-id\="payara.runtime" timestamp\="0"/>\r\n  <runtime id\="Payara_2" location\="D\:/Eclipse/payara5/glassfish" name\="Payara_2" runtime-type-id\="payara.runtime" timestamp\="0" vm-install-id\="1700310861506" vm-install-type-id\="org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType"/>\r\n</runtimes>\r\n

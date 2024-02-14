@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
+<f:metadata>
+	<f:event type="preRenderView"
+		listener="#{customerBean.initializeShopProducts}" />
+</f:metadata>
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+	<title>Shop</title>
+	<h:outputStylesheet name="/css/shop.css" />
+	<h:outputStylesheet name="/css/shoppingCartCards.css" />
+	<h:outputStylesheet name="/css/table.css" />
+</h:head>
+<h:body>
+	
+	<div class="customer-header">
+		<h:form>
+			<h:commandButton styleClass="logout-button" value="Logout"
+				action="#{loginBean.logout()}" />
+		</h:form>
+
+		<h:form>
+			<h:commandLink class="img"
+				action="#{customerBean.redirectToMainPage()}">
+				<h:graphicImage name="images/backImage.png" />
+			</h:commandLink>
+		</h:form>
+
+		<h2 class="customer-title">#{customerBean.selectedShop.name}</h2>
+
+		<br /> <br />
+	</div>
+	<br />
+	<h:form styleClass="search-container">
+		<h:inputText value="#{customerBean.searchKeyword}"
+			styleClass="search-input" a:placeholder="Search by Product Name" />
+		<h:commandButton value="Search" styleClass="search-button"
+			action="#{customerBean.searchProducts}" />
+	</h:form>
+
+	<br />
+	<br />
+	<br />
+	<h:form>
+		<h:dataTable value="#{customerBean.productList}" var="product"
+			class="table">
+			<h:column>
+				<f:facet name="header">Product name</f:facet>
+        #{product.name}
+    </h:column>
+			<h:column>
+				<f:facet name="header">Product description</f:facet>
+        #{product.description}
+    </h:column>
+			<h:column>
+				<f:facet name="header">Product category</f:facet>
+        #{product.category.name}
+    </h:column>
+			<h:column>
+				<f:facet name="header">Product price</f:facet>
+        #{product.price} $
+    </h:column>
+			<h:column>
+				<div class="counter-container">
+					<h:panelGroup rendered="#{customerBean.isInStock(product)}">
+						<h:commandButton id="decrement-add-to-shoppingCart"
+							class="decrement" value="-"
+							action="#{customerBean.decrement(product)}">
+							<f:ajax render="@form" />
+						</h:commandButton>
+					</h:panelGroup>
+					<h:outputText value="#{product.desiredQuantity}"
+						class="counter-value"
+						rendered="#{customerBean.isInStock(product)}" />
+					<h:panelGroup rendered="#{customerBean.isInStock(product)}">
+						<h:commandButton id="increment-add-to-shoppingCart"
+							class="increment" value="+"
+							action="#{customerBean.increment(product)}">
+							<f:ajax render="@form" />
+						</h:commandButton>
+					</h:panelGroup>
+				</div>
+			</h:column>
+			<h:column>
+				<f:facet name="header"></f:facet>
+				<h:panelGroup>
+					<h:commandButton
+						value="#{not customerBean.isInStock(product) ?
+			'Out of stock' : 'Buy Product'}"
+						styleClass="#{not customerBean.isInStock(product) ?
+			'delete-btn' : 'btns'}"
+						action="#{shoppingCartBean.addProductToShoppingCart(product)}"
+						disabled="#{not customerBean.isInStock(product) or product.desiredQuantity = 0}">
+					</h:commandButton>
+				</h:panelGroup>
+			</h:column>
+		</h:dataTable>
+	</h:form>
+	<br />
+</h:body>
+</html>

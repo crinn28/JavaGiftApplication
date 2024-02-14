@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Register</title>
+	<h:outputStylesheet name="css/login.css" />
+	<h:outputStylesheet name="css/dropdown.css" />
+</h:head>
+<h:body>
+
+	<h:form label="registerForm" class="form">
+
+
+		<h2 class="title-form-login">Register</h2>
+		<br />
+		<h:outputLabel for="firstNameInput" value="First Name" />
+		<h:inputText id="firstNameInput" class="effect-input" required="true"
+			label="FirstName" a:placeholder="First Name"
+			validatorMessage="Enter First Name"
+			value="#{registerBean.registerDTO.firstname}"></h:inputText>
+		<br />
+		<br />
+		<h:outputLabel for="lastNameInput" value="Last Name" />
+		<h:inputText id="lastNameInput" class="effect-input" required="true"
+			label="LastName" a:placeholder="Last Name"
+			validatorMessage="Enter Last Name"
+			value="#{registerBean.registerDTO.lastname}"></h:inputText>
+		<br />
+		<br />
+		<h:outputLabel for="emailInput" value="Email" />
+		<h:inputText id="emailInput" class="effect-input" required="true"
+			label="Email" a:placeholder="Email" validatorMessage="Enter Email"
+			value="#{registerBean.registerDTO.email}"></h:inputText>
+		<br />
+		<br />
+		<h:outputLabel for="passwordInput" value="Password" />
+		<h:inputSecret id="passwordInput" class="effect-input"
+			label="Password" required="true" a:placeholder="Password"
+			validatorMessage="Enter password"
+			value="#{registerBean.registerDTO.password}"></h:inputSecret>
+		<br />
+		<br />
+		<h:outputLabel for="roleInput" value="Choose your role" />
+		<br />
+		<div class="custom-dropdown">
+			<h:selectOneMenu value="#{registerBean.selectedRole.id}">
+				<f:selectItems value="#{registerBean.roleList}" var="role"
+					class="dropdown-content" itemValue="#{role.id}"
+					itemLabel="#{role.name}" />
+			</h:selectOneMenu>
+		</div>
+		<br />
+		<br />
+		<div class="center-container">
+			<h:commandButton class="btns" value="Register"
+				action="#{registerBean.registerUser()}"></h:commandButton>
+		</div>
+		<br />
+		<h:messages infoStyle="color:darkgreen" errorStyle="color:darkred"></h:messages>
+
+
+
+	</h:form>
+
+
+</h:body>
+</html>

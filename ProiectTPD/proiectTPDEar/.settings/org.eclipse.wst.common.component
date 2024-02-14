@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+            
+    
+    <wb-module deploy-name="proiectTPDEar">
+                        
+        
+        <wb-resource deploy-path="/" source-path="/EarContent" tag="defaultRootSource"/>
+                        
+        
+        <dependent-module archiveName="proiectTPDEjb.jar" deploy-path="/" handle="module:/resource/proiectTPDEjb/proiectTPDEjb">
+                                    
+            
+            <dependency-type>uses</dependency-type>
+                                
+        
+        </dependent-module>
+                        
+        
+        <dependent-module archiveName="proiectTPDEjbClient.jar" deploy-path="/" handle="module:/resource/proiectTPDEjbClient/proiectTPDEjbClient">
+                                    
+            
+            <dependency-type>uses</dependency-type>
+                                
+        
+        </dependent-module>
+        <dependent-module archiveName="GuiClient.war" deploy-path="/" handle="module:/resource/GuiClient/GuiClient">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+                    
+    
+    </wb-module>
+        
+
+</project-modules>

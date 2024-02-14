@@ -1,0 +1,180 @@
+.card-container {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+.card {
+	flex: 0 0 97%;
+	margin: 10px;
+	border: 1px solid #ddd;
+	border-radius: 8px;
+	padding: 15px;
+	cursor: pointer;
+	display: flex;
+	justify-content: space-between;
+	transition: box-shadow 0.3s ease;
+}
+
+.card:hover {
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+.title {
+	text-align: center;
+	color: #333;
+	font-size: 40px;
+}
+
+.left-column {
+	margin-top: 30px;
+	margin-left: 30px;
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+}
+
+.right-column {
+
+	margin-left: 80px;
+	flex: 0 0 200px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+}
+
+.card h3,
+.card p {
+	margin: 10px;
+}
+
+.price,
+.quantity,
+.total {
+	text-align: center;
+	margin-top: 10px;
+}
+
+.quantity-value,
+.price-value {
+	text-align: center;
+	font-weight: bold;
+}
+
+.total-price-value {
+	text-align: center;
+	font-weight: bold;
+	font-size: 20px;
+}
+
+.bottom-border {
+	text-align: center;
+	font-weight: bold;
+	margin-left: 100px;
+	margin-right: 40px;
+	font-size: 20px;
+}
+
+.remove {
+	margin-left: 160px !important;
+	top: 0;
+	right: 0;
+	height: 25px;
+	width: 25px;
+	background-color: #d32f2f;
+	color: white;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+.decrement {
+	height: 25px;
+	width: 25px;
+	background-color: #d32f2f;
+	color: white;
+
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+.increment {
+	height: 25px;
+	width: 25px;
+	background-color: #4CAF50;
+	color: white;
+
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+.decrement-add-to-shoppingCart {
+	height: 30px;
+	width: 30px;
+	background-color: #d32f2f;
+	color: white;
+
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+.increment-add-to-shoppingCart {
+	height: 30px;
+	width: 30px;
+	background-color: #4CAF50;
+	color: white;
+
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+.scrollable-container {
+	text-align: center;
+	max-height: 450px;
+	overflow-y: auto;
+}
+
+.bottom-summary {
+	position: fixed;
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	border-top: 1px solid #ccc;
+	height: 72px;
+	bottom: 0;
+	width: 100%;
+	background-color: white;
+}
+
+.cancel-order {
+	height: 40px;
+	width: auto;
+	background-color: #d32f2f;
+	color: white;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	margin-right: 10px;
+}
+
+.place-order {
+	margin-left: 140px !important;
+	margin-right: 40px !important;
+	top: 0;
+	right: 0;
+	height: 40px;
+	width: auto;
+	background-color:#4CAF50 ;
+	color: white;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	margin-right: 10px;
+}

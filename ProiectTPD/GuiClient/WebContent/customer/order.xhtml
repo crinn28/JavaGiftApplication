@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+<f:metadata>
+	<f:event type="preRenderView"
+		listener="#{customerBean.initializeShopProducts}" />
+</f:metadata>
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+	<title>Shop</title>
+	<h:outputStylesheet name="/css/shop.css" />
+	<h:outputStylesheet name="/css/shoppingCartCards.css" />
+	<h:outputStylesheet name="/css/table.css" />
+</h:head>
+<h:body>
+	<div class="customer-header">
+		<h:form>
+			<h:commandButton styleClass="logout-button" value="Logout"
+				action="#{loginBean.logout()}" />
+		</h:form>
+
+		<h:form>
+			<h:commandLink class="img"
+				action="#{customerBean.redirectToMainPage()}">
+				<h:graphicImage name="images/backImage.png" />
+			</h:commandLink>
+		</h:form>
+
+		<h2 class="customer-title">MY ORDERS</h2>
+
+		<br /> <br />
+	</div>
+	<br />
+	<br />
+	<br />
+	<br />
+	<h:form>
+		<h:dataTable value="#{orderBean.orderList}" var="order" class="table">
+			<h:column>
+				<f:facet name="header">Order No.</f:facet>
+        #{orderBean.orderList.indexOf(order) + 1}
+    </h:column>
+			<h:column>
+				<f:facet name="header">Receiver Name</f:facet>
+        #{order.receiver.firstname} #{order.receiver.lastname} 
+    </h:column>
+			<h:column>
+				<f:facet name="header">Order Status</f:facet>
+				<h:outputText value="#{order.status.name}" style="font-weight: bold;" />
+
+			</h:column>
+			<h:column>
+				<f:facet name="header"></f:facet>
+				<h:panelGroup>
+					<h:commandButton value="View order" styleClass="btns"
+						action="#{orderBean.viewOrder(order)}">
+					</h:commandButton>
+				</h:panelGroup>
+			</h:column>
+		</h:dataTable>
+	</h:form>
+	<br />
+</h:body>
+</html>

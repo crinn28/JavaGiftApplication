@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>#{not productBean.productExists() ? 'Add' : 'Update'}
+		product</title>
+	<h:outputStylesheet name="css/login.css" />
+	<h:outputStylesheet name="css/shop.css" />
+	<h:outputStylesheet name="css/dropdown.css" />
+</h:head>
+<h:body>
+
+	<h:form label="createProductForm" class="form">
+
+		<h2 class="title-form-login">#{not productBean.productExists() ?
+			'Add' : 'Update'} product</h2>
+		<br />
+		<h:outputLabel for="categoryInput" value="Product Category" />
+		<br />
+		<br />
+		<div class="custom-dropdown">
+			<h:selectOneMenu value="#{productBean.selectedCategory.id}">
+				<f:selectItems value="#{categoryBean.categoryList}" var="category"
+					class="dropdown-content" itemValue="#{category.id}"
+					itemLabel="#{category.name}" />
+			</h:selectOneMenu>
+		</div>
+
+		<br />
+
+		<h:commandLink class="links"
+			value="The searched category doesn't exist? Create one now!"
+			action="#{productBean.redirectToCreateCategory()}" immediate="true" />
+		<br />
+		<br />
+		<br />
+
+
+		<h:outputLabel for="nameInput" value="Product Name" />
+		<h:inputText id="nameInput" class="effect-input" required="#{not productBean.wasLinkClicked}"
+			label="Name" a:placeholder="Type the product name"
+			validatorMessage="Enter Product Name"
+			value="#{productBean.productDTO.name}"></h:inputText>
+		<br />
+		<br />
+		<h:outputLabel for="descriptionInput" value="Product Description" />
+		<h:inputText id="descriptionInput" class="effect-input" 
+			required="#{not productBean.wasLinkClicked}" label="Description"
+			a:placeholder="Type the product description"
+			validatorMessage="Enter Product Description"
+			value="#{productBean.productDTO.description}"></h:inputText>
+		<br />
+		<br />
+		
+		<h:outputLabel for="priceInput" value="Product Price" />
+		<h:inputText id="priceInput" class="effect-input" 
+			required="#{not productBean.wasLinkClicked}" label="Price"
+			a:placeholder="Type the product price"
+			validatorMessage="Enter Product Price"
+			value="#{productBean.productDTO.price}"></h:inputText>
+		<br />
+		<br />
+		
+		<h:outputLabel for="quantityInput" value="Product Quantity" />
+		<h:inputText id="quantityInput" class="effect-input" 
+			required="#{not productBean.wasLinkClicked}" label="Quantity"
+			a:placeholder="Type the product quantity"
+			validatorMessage="Enter Product Quantity"
+			value="#{productBean.productDTO.quantity}">
+      		<f:convertNumber integerOnly="true" type="number" />
+      	</h:inputText>
+		<br />
+		<br />
+
+		<h:commandButton class="btns"
+			value="#{not productBean.productExists() ? 'Add' : 'Update'}"
+			action="#{productBean.createProduct()}"></h:commandButton>
+		
+		<h:commandButton class="cancel-button"
+			value="Cancel"
+			action="#{productBean.redirectToShopAdminPage}" immediate="true"></h:commandButton>
+			
+		<br />
+
+		<h:messages infoStyle="color:darkgreen" errorStyle="color:darkred"></h:messages>
+
+	</h:form>
+
+</h:body>
+</html>

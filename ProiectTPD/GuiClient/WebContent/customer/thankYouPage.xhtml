@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Cards</title>
+	<h:outputStylesheet name="css/shoppingCartCards.css" />
+	<h:outputStylesheet name="css/login.css" />
+	<h:outputStylesheet name="css/shop.css" />
+</h:head>
+<h:body>
+	<h:form>
+		<h:form>
+			<div class="customer-header">
+				<h2 class="customer-title">Thank you,
+					#{receiverBean.userDTO.firstname} #{receiverBean.userDTO.lastname}
+					for your order!</h2>
+
+				<h:form>
+					<h:commandButton styleClass="logout-button" value="Logout"
+						action="#{loginBean.logout()}" />
+				</h:form>
+				<br /> <br /> <br /> <br />
+			</div>
+			<br />
+			<br />
+			<div class="scrollable-container">
+				<h2>Receiver information</h2>
+				<h3>Name: #{receiverBean.receiverDTO.firstname}
+					#{receiverBean.receiverDTO.lastname}</h3>
+				<p>Address: #{receiverBean.receiverDTO.address}</p>
+				<br /> <br />
+				<div class="card-container">
+					<ui:repeat value="#{receiverBean.shoppingCartProducts}"
+						var="shoppingCartProduct">
+						<div class="card">
+							<div class="left-column">
+								<h3>#{shoppingCartProduct.product.name}</h3>
+								<p>#{shoppingCartProduct.product.description}</p>
+							</div>
+							<div class="right-column">
+								<span class="price">Price: </span> <span class="price-value">
+									#{shoppingCartProduct.product.price} $</span>
+								<div class="quantity-controls">
+									<span class="quantity">Quantity:</span> <br />
+									<h:form>
+										<span class="quantity-value">
+											#{shoppingCartProduct.productQuantity} </span>
+										<br />
+										<span class="total">Item Total:<br /></span>
+										<span class="total-price-value">#{shoppingCartProduct.totalItemPrice}
+											$ <br />
+										</span>
+									</h:form>
+								</div>
+
+							</div>
+						</div>
+					</ui:repeat>
+				</div>
+			</div>
+
+			<div class="bottom-summary">
+				<span class="bottom-border">Products:
+					#{receiverBean.numberOfProducts}</span> <span class="bottom-border">Total:
+					#{receiverBean.shoppingCartTotal} $</span>
+				<h:panelGroup>
+					<h:commandButton class="place-order" value="Go to main page"
+						action="#{receiverBean.redirectToMainPage()}">
+						<f:ajax render="@form" />
+					</h:commandButton>
+				</h:panelGroup>
+			</div>
+
+		</h:form>
+	</h:form>
+</h:body>
+</html>

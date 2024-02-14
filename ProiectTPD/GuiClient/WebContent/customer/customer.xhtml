@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Cards</title>
+	<h:outputStylesheet name="css/card.css" />
+	<h:outputStylesheet name="css/login.css" />
+	<h:outputStylesheet name="css/shop.css" />
+</h:head>
+<h:body>
+		<div class="customer-header">
+			<h2 class="customer-title">Shops List</h2>
+
+			<h:form>
+				<h:commandButton styleClass="logout-button" value="Logout"
+					action="#{loginBean.logout()}" />
+			</h:form>
+
+			<h:form>
+				<h:commandLink class="order-img" action="#{customerBean.redirectToOrders()}">
+					<h:graphicImage name="images/checklist.png" />
+				</h:commandLink>
+			</h:form>
+			
+			<h:form>
+				<h:commandLink class="img" action="#{customerBean.redirectToShoppingCart()}">
+					<h:graphicImage name="images/buttonImage.png" />
+				</h:commandLink>
+			</h:form>
+			
+		</div>
+		<div class="card-container">
+			<ui:repeat value="#{customerBean.shopList}" var="shop">
+				<div class="card" onclick="handleCardClick('#{shop.id}')">
+					<h3>#{shop.name}</h3>
+					<p>#{shop.address}</p>
+				</div>
+			</ui:repeat>
+		</div>
+	<script>
+		function handleCardClick(shopId) {
+			var redirectUrl = "/GuiClient/customer/shopProducts.xhtml?shopId="
+					+ shopId;
+			window.location.href = redirectUrl;
+		}
+	</script>
+</h:body>
+</html>

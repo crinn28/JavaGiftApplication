@@ -1,0 +1,158 @@
+.customer-header {
+    text-align: center;
+}
+
+.customer-title {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.logout-button {
+    height: 40px;
+    width: auto;
+    background-color: #d32f2f;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.scrollable-container {
+    width: 100%;
+    text-align: center;
+    max-height: 750px;
+    overflow-y: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.order-card {
+    width: 45%;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    cursor: pointer;
+    transition: box-shadow 0.3s ease;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px;
+}
+
+.order-card:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.product-card {
+    width: 95%;
+    height: 120px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    cursor: pointer;
+    transition: box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.product-card:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.left-column {
+    margin-top: 10px;
+    margin-left: 10px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.right-column {
+    margin-left: 20px;
+}
+
+.price {
+    margin-top: -250px !important;
+}
+
+.total {
+    margin-top: -40px;
+}
+
+.quantity {
+    margin-top: -40px;
+}
+
+.quantity-value,
+.price-value {
+    text-align: center;
+    font-weight: bold;
+}
+
+.total-price-value {
+    text-align: center;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.remove,
+.decrement,
+.increment {
+    height: 20px;
+    width: 20px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.remove {
+    background-color: #d32f2f;
+}
+
+.decrement {
+    background-color: #d32f2f;
+}
+
+.increment {
+    background-color: #4CAF50;
+}
+
+.cancel-order,
+.place-order {
+    height: 30px;
+    width: auto;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.cancel-order {
+    background-color: #d32f2f;
+}
+
+.place-order {
+    background-color: #4CAF50;
+}
+
+.bottom-summary {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    border-top: 1px solid #ccc;
+    height: 72px;
+    bottom: 0;
+    width: 100%;
+    background-color: white;
+}

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Receiver info</title>
+	<h:outputStylesheet name="css/login.css" />
+	<h:outputStylesheet name="css/dropdown.css" />
+</h:head>
+<h:body>
+
+	<h:form label="createReceiverForm" class="form">
+
+		<h2 class="title-form-login">Fill in receiver details</h2>
+		<br />
+		<br />
+		<h:outputLabel for="firstnameInput" value="First Name" />
+		<h:inputText id="firstnameInput" class="effect-input" required="true"
+			label="FirstName" a:placeholder="Type receiver First Name"
+			validatorMessage="Enter Receiver First Name"
+			value="#{receiverBean.receiverDTO.firstname}"></h:inputText>
+		<br />
+		<br />
+		<h:outputLabel for="lastnameInput" value="Last Name" />
+		<h:inputText id="lastnameInput" class="effect-input" 
+			required="true" label="LastName"
+			a:placeholder="Type the Last Name"
+			validatorMessage="Enter Last Name"
+			value="#{receiverBean.receiverDTO.lastname}"></h:inputText>
+		<br />
+		<br />
+		
+		<h:outputLabel for="addressInput" value="Address" />
+		<h:inputText id="addressInput" class="effect-input" 
+			required="true" label="Address"
+			a:placeholder="Type the address"
+			validatorMessage="Enter Address"
+			value="#{receiverBean.receiverDTO.address}"></h:inputText>
+		<br />
+		<br />	
+
+		<h:commandButton class="btns"
+			value="Finalize Order"
+			action="#{receiverBean.createReceiver()}"></h:commandButton>
+		<br />
+
+		<h:messages infoStyle="color:darkgreen" errorStyle="color:darkred"></h:messages>
+
+	</h:form>
+
+</h:body>
+</html>

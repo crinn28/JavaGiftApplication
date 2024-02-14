@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+	<persistence-unit name="proiectTPDEjb">
+		<jta-data-source>jdbc/proiectResource</jta-data-source>
+		<class>model.User</class>
+		<class>model.Category</class>
+		<class>model.Courier</class>
+		<class>model.Order</class>
+		<class>model.Product</class>
+		<class>model.Receiver</class>
+		<class>model.Role</class>
+		<class>model.Shoppingcartproduct</class>
+		<class>model.Shoppingcart</class>
+		<class>model.Shop</class>
+		<class>model.Status</class>
+	</persistence-unit>
+</persistence>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="javax.ejb.Remote"/>
+    <fullyQualifiedTypeName name="javax.persistence.EntityManager"/>
+    <fullyQualifiedTypeName name="javax.persistence.PersistenceContext"/>
+    <fullyQualifiedTypeName name="model.User"/>
+    <fullyQualifiedTypeName name="com.example.dto.RegisterDTO"/>
+    <fullyQualifiedTypeName name="javax.management.relation.Role"/>
+    <fullyQualifiedTypeName name="java.util.Objects"/>
+    <fullyQualifiedTypeName name="javax.faces.convert.FacesConverter"/>
+    <fullyQualifiedTypeName name="javax.faces.convert.Converter"/>
+    <fullyQualifiedTypeName name="com.example.dao.RoleDAORemote"/>
+    <fullyQualifiedTypeName name="com.example.dto.RoleDTO"/>
+    <fullyQualifiedTypeName name="com.example.dao.RoleDao"/>
+    <fullyQualifiedTypeName name="com.example.dao.UserDAORemote"/>
+    <fullyQualifiedTypeName name="com.example.util.Validators"/>
+    <fullyQualifiedTypeName name="com.example.exception.InvalidQuantityException"/>
+    <fullyQualifiedTypeName name="com.example.dto.ShopDTO"/>
+    <fullyQualifiedTypeName name="javax.faces.bean.ManagedProperty"/>
+    <fullyQualifiedTypeName name="javax.inject.Inject"/>
+    <fullyQualifiedTypeName name="com.example.dao.ShopDAORemote"/>
+    <fullyQualifiedTypeName name="com.example.dao.ProductDAORemote"/>
+    <fullyQualifiedTypeName name="javax.faces.context.FacesContext"/>
+    <fullyQualifiedTypeName name="java.util.Map"/>
+    <fullyQualifiedTypeName name="javax.faces.bean.ManagedBean"/>
+    <fullyQualifiedTypeName name="java.io.Serializable"/>
+    <fullyQualifiedTypeName name="javax.faces.component.UIComponent"/>
+    <fullyQualifiedTypeName name="javax.xml.registry.infomodel.User"/>
+    <fullyQualifiedTypeName name="model.Shoppingcart"/>
+    <fullyQualifiedTypeName name="model.Shoppingcartproduct"/>
+    <fullyQualifiedTypeName name="com.example.dao.ShoppingCartDAORemote"/>
+    <fullyQualifiedTypeName name="com.example.dto.ProductShoppingCartDTO"/>
+    <fullyQualifiedTypeName name="com.example.dto.ProductDTO"/>
+    <fullyQualifiedTypeName name="java.lang.System"/>
+    <fullyQualifiedTypeName name="com.example.dto.ShoppingCartProductDTO"/>
+    <fullyQualifiedTypeName name="com.example.dto.ShoppingCartDTO"/>
+    <fullyQualifiedTypeName name="com.example.dao.ShoppingCartProductDAORemote"/>
+    <fullyQualifiedTypeName name="java.util.Optional"/>
+    <fullyQualifiedTypeName name="com.example.dao.StatusDAORemote"/>
+    <fullyQualifiedTypeName name="com.example.dto.StatusDTO"/>
+    <fullyQualifiedTypeName name="model.Courier"/>
+    <fullyQualifiedTypeName name="javax.faces.bean.RequestScoped"/>
+    <fullyQualifiedTypeName name="com.example.dao.CourierDAORemote"/>
+    <fullyQualifiedTypeName name="com.example.dto.CourierDTO"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+</qualifiedTypeNameHistroy>

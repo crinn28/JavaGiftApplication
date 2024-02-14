@@ -1,0 +1,25 @@
+.custom-dropdown {
+  position: relative;
+  display: inline-block;
+  width: 100%; 
+}
+
+.custom-dropdown select {
+  font-size: 14px;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.custom-dropdown select:after {
+  content: '\25BC';
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+}

@@ -1,0 +1,10 @@
+1704288462338	Rename resource 'RegisterDTO.java''
+1704295558085	Move package
+1704298613050	Encapsulate field 'approved'
+1704303832740	Encapsulate field 'quantity'
+1704357334698	Rename resource 'ProductShoppingCartDTO'
+1704357341183	Rename resource 'ProductShoppingCartDTO.JAVA'
+1704357367131	Delete element
+1704357497741	Encapsulate field 'desiredQuantity'
+1704362814757	Encapsulate field 'productList'
+1704456003903	Encapsulate field 'shoppingCartDTO'

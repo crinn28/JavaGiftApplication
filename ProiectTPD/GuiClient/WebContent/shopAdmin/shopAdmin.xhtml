@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+	<title>Shop</title>
+	<h:outputStylesheet name="/css/shop.css" />
+	<h:outputStylesheet name="/css/table.css" />
+</h:head>
+<h:body>
+	<div class="shopAdmin-header">
+		<h:form>
+			<h:commandButton styleClass="logout-button" value="Logout"
+				action="#{loginBean.logout()}" />
+		</h:form>
+
+
+		<h:form rendered="#{not shopBean.hasUserShop()}">
+
+			<h2 class="shopAdmin-title">Welcome,
+				#{shopBean.userDTO.firstname} #{shopBean.userDTO.lastname}!</h2>
+
+			<div class="center-content">
+				<h2>It looks like you don't have a shop. Please press on the
+					button below in order to add one:</h2>
+				<h:commandButton styleClass="center-button" value="Add your shop"
+					action="#{shopBean.redirectToCreateShop()}" />
+			</div>
+		</h:form>
+
+		<br />
+		<h:form rendered="#{shopBean.hasUserShop()}">
+			<h2 class="customer-title">#{shopBean.shopDTO.name}</h2>
+		</h:form>
+	</div>
+	<h:form rendered="#{shopBean.hasUserShop()}">
+		<div class="header-buttons-container">
+			<h:commandButton styleClass="btns" value="Add a product"
+				action="#{shopBean.redirectToCreateProduct()}" />
+
+			<h:commandButton styleClass="btns" value="Edit your shop"
+				action="#{shopBean.redirectToCreateShop()}" />
+
+		</div>
+	</h:form>
+	<br />
+	<br />
+	<h:dataTable rendered="#{shopBean.hasUserShop()}"
+		value="#{productBean.productList}" var="product" class="table">
+		<h:column>
+			<f:facet name="header">Product name</f:facet>
+        #{product.name}
+    </h:column>
+		<h:column>
+			<f:facet name="header">Product description</f:facet>
+        #{product.description}
+    </h:column>
+		<h:column>
+			<f:facet name="header">Product category</f:facet>
+        #{product.category.name}
+    </h:column>
+		<h:column>
+			<f:facet name="header">Product price</f:facet>
+        #{product.price} $
+    </h:column>
+		<h:column>
+			<f:facet name="header">Product quantity</f:facet>
+        #{product.quantity}
+    </h:column>
+		<h:column>
+			<f:facet name="header"></f:facet>
+			<h:form>
+				<h:commandButton value="Edit Product" styleClass="btns"
+					action="#{productBean.setProductFromTable()}">
+					<f:setPropertyActionListener target="#{productBean.productDTO}"
+						value="#{product}" />
+				</h:commandButton>
+			</h:form>
+		</h:column>
+
+		<h:column>
+			<f:facet name="header"></f:facet>
+			<h:form>
+				<h:commandButton value="Delete Product" styleClass="delete-btn"
+					action="#{productBean.deleteProduct()}">
+					<f:setPropertyActionListener target="#{productBean.productDTO}"
+						value="#{product}" />
+				</h:commandButton>
+			</h:form>
+		</h:column>
+
+	</h:dataTable>
+	<br />
+</h:body>
+</html>

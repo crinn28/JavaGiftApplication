@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Class-Path: proiectTPDEjbClient.jar eclipselink.jar javax.persistence.so
+ urce_2.1.1.v201509150925.jar javax.persistence_2.1.1.v201509150925.jar 
+ org.eclipse.persistence.jpa.modelgen.source_2.6.5.v20170607-b3d05bd.jar
+  org.eclipse.persistence.jpa.modelgen_2.6.5.v20170607-b3d05bd.jar org.e
+ clipse.persistence.jpars.source_2.6.5.v20170607-b3d05bd.jar org.eclipse
+ .persistence.jpars_2.6.5.v20170607-b3d05bd.jar commonj.sdo_2.1.1.v20111
+ 2051852.jar javax.mail_1.4.0.v201005080615.jar javax.validation_1.1.0.v
+ 201304101302.jar javax.xml.bind_2.2.12.v201410011542.jar jaxb-core_2.2.
+ 11.v201407311112.jar jaxb-xjc_2.2.11.v201407311112.jar org.glassfish.ja
+ vax.json_1.0.4.v201311181159.jar
+
